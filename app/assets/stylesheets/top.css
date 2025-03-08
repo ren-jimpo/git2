@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif; /* Arialフォントを使用し、フォールバックとしてsans-serifを指定 */
+    line-height: 1.6; /* 行間を1.6に設定 */
+    margin: 0; /* ページの外側の余白を0に設定 */
+    padding: 20px; /* ページの内側に20pxの余白を設定 */
+    background-color: #f4f4f4; /* 背景色を薄いグレーに設定 */
+}
+
+h1 {
+    text-align: center; /* テキストを中央揃えに設定 */
+    color: #333; /* テキストの色を濃いグレーに設定 */
+}
+
+.animal {
+    background-color: #fff; /* 背景色を白に設定 */
+    border-radius: 5px; /* 角を5pxの半径で丸める */
+    padding: 20px; /* 内側に20pxの余白を設定 */
+    margin-bottom: 20px; /* 下に20pxの余白を設定 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 軽い影をつける */
+}
+
+.animal h2 {
+    color: #198cff; /* テキストの色を濃い青に設定 */
+    margin-top: 0; /* 上の余白を0に設定 */
+}
+
+.animal p {
+    margin: 10px 0; /* 上下に10pxの余白を設定 */
+    color: #5f5f5f; /* テキストの色を濃いグレーに設定 */
+}
+
+.animal .label {
+    font-weight: bold; /* 太字に設定 */
+    color: #7f8c8d; /* テキストの色をグレーに設定 */
+}
+
+
+

@@ -1,0 +1,63 @@
+<h1>簡単な動物図鑑</h1>
+
+<div class="button-container">
+    <%= link_to "新しい動物を追加", home_add_path, class: "add-button" %>
+</div>
+
+<!-- データベースの動物一覧（登録日時の新しい順） -->
+<% if @animals.present? %>
+    <div class="database-info">
+        <p>現在のデータベースには <%= @animals.count %> 件の動物情報が登録されています</p>
+        <p class="sort-info">※ 最新の登録が一番上に表示されます</p>
+    </div>
+    
+    <div class="animals-container">
+        <% @animals.each do |animal| %>
+            <div class="animal database-entry">
+                <h2><%= animal.name %></h2>
+                <p><span class="label">学名：</span><%= animal.scientific_name %></p>
+                <p><span class="label">生息地：</span><%= animal.habitat %></p>
+                <p><span class="label">特徴：</span><%= animal.characteristics %></p>
+                <p class="timestamp">登録日時: <%= animal.created_at.strftime('%Y年%m月%d日 %H:%M') %></p>
+            </div>
+        <% end %>
+    </div>
+<% else %>
+    <!-- データベースが空の場合 -->
+    <div class="no-animals">
+        <p>まだ動物が登録されていません。「新しい動物を追加」ボタンから登録してみましょう！</p>
+    </div>
+    
+    <h2 class="sample-heading">サンプルデータ</h2>
+    <p class="sample-info">以下は表示例です。実際に追加すると、ここにデータベースの内容が表示されます。</p>
+    
+    <div class="animals-container sample-container">
+        <div class="animal sample">
+            <h2>ライオン</h2>
+            <p><span class="label">学名：</span>Panthera leo</p>
+            <p><span class="label">生息地：</span>アフリカ、インド</p>
+            <p><span class="label">特徴：</span>オスは特徴的なたてがみを持つ。群れで生活し、主に夜行性。</p>
+        </div>
+
+        <div class="animal sample">
+            <h2>ペンギン</h2>
+            <p><span class="label">学名：</span>Spheniscidae（科）</p>
+            <p><span class="label">生息地：</span>南半球（主に南極周辺）</p>
+            <p><span class="label">特徴：</span>水中を泳ぐのに適した体型。羽は鱗のように変化し、飛ぶことはできない。</p>
+        </div>
+
+        <div class="animal sample">
+            <h2>キリン</h2>
+            <p><span class="label">学名：</span>Giraffa camelopardalis</p>
+            <p><span class="label">生息地：</span>アフリカのサバンナ</p>
+            <p><span class="label">特徴：</span>世界最長の首を持つ陸上動物。高い木の葉を食べるのに適している。</p>
+        </div>
+
+        <div class="animal sample">
+            <h2>コアラ</h2>
+            <p><span class="label">学名：</span>Phascolarctos cinereus</p>
+            <p><span class="label">生息地：</span>オーストラリア東部</p>
+            <p><span class="label">特徴：</span>ユーカリの葉を主食とする。1日の大半を睡眠に費やす。</p>
+        </div>
+    </div>
+<% end %>
